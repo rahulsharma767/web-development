@@ -1,0 +1,134 @@
+body{
+   font-family: sans-serif;
+   background-color: rgb(231, 185, 148);
+   padding: 20px;
+   margin: 0; 
+    background: linear-gradient(135deg ,#943636 , rgba(122, 60, 163, 0.6));
+}
+.content{
+    max-width: 400px;
+    margin: 2rem auto;
+       
+
+
+}
+.product-card{
+    background-color: brown;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0 ,0 , 0.1);
+    transition: transform 0.3s ease,box-shadow 0.3s ease ;
+
+
+}
+.product-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30pxx rgba(0 , 0 , 0 , 0.15);
+}
+product-card-image{
+    height: 250px;
+    overflow :hidden;
+
+
+}
+
+.product-card-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3 ease;
+
+}
+.product-card:hover .product-card-image img{
+    transform: scale(1.05);
+}
+product-card-info{
+    padding: 20px;
+}
+
+.product-card-title{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: rgb(35, 0, 68);
+    padding: 20px;
+}
+.product-card-description{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+   
+}
+
+.product-card-price-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+}
+
+.product-card-price{
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+
+}
+
+.product-card--btn{
+    background-color: darkgoldenrod;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease  ;
+    padding: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+      transition:background-color 0.7s ease-in-out ;
+      box-shadow:  0 4px 6px rgba(0, 0, 0, 1);
+
+
+}
+
+.product-card--btn:hover{
+    background-color: darksalmon;
+    box-shadow: 20px;
+   
+
+
+}
+
+@media(max-width:480px) { 
+    .content{
+
+ 
+max-width: 100%;
+padding: 0 200px;
+
+
+}
+
+.product-card-image{
+    height: 200px;
+
+}
+
+.product-card-description{
+    font-size: 0.8rem;
+}
+
+.product-card-price{
+    font-size: 1.1rem;
+
+}
+.product-card--btn{
+    padding: 8px 16px;
+    font-size: 0.8rem;
+   
+}
+
+}

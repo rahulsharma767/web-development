@@ -1,0 +1,43 @@
+.nav2 {
+    background-color: cadetblue;
+    width: 200px;
+    padding: 20px;
+    text-align: center;
+
+
+}
+.nav2 ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+}
+.nav2 li{
+    margin-bottom: 12px;
+
+}
+.nav2 a{
+    text-decoration: none;
+    color: rgb(23, 2, 44);
+    display: block;
+    padding: 10px;
+    width: 100%;
+
+}
+.nav2 a:hover {
+         background-color: darkmagenta;
+
+}
+.nav2 .login-btn {
+    background-color: chartreuse;
+    color: blue;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+
+}
+.nav2 .login-btn:hover{
+    background-color: rgb(24, 46, 2);
+    border:  1px solid white;
+}

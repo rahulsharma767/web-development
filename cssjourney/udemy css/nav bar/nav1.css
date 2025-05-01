@@ -1,0 +1,59 @@
+ * {
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      body {
+        margin: 0px;
+        padding: 20px;
+        background-color: #1a1a1a;
+        color: antiquewhite;
+      }
+      .nav-container {
+        margin-bottom: 40px;
+      }
+      h2 {
+        margin-bottom: 10px;
+      }
+      .nav1 {
+        background-color: #f8f9fa;
+        padding: 10px;
+      }
+      .nav1 ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-around;
+        margin: 0;
+        padding: 0;
+      }
+      .nav1 li {
+        display: inline;
+      }
+      .nav1 a {
+        text-decoration: none;
+        color: #b51b32;
+        /* background-color: #e0e6ec; */
+        padding: 5px 15px;
+        position: relative;
+      }
+      .nav1 .login-btn {
+        background-color: #b51b32;
+        color: aqua;
+        border: none;
+        padding: 5px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .nav1 a::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #121212;
+        transform: scaleX(0);
+        transition: transform 0.3 ease-in-out;
+      }
+      .nav1 a:hover::after {
+        transform: scaleX(1);
+      }

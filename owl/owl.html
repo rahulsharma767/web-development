@@ -1,0 +1,72 @@
+// --- owltales4art MVP: Next.js + TailwindCSS Project Starter ---
+
+// 1. Layout: pages/_app.tsx
+import '@/styles/globals.css'
+import type { AppProps } from 'next/app'
+
+export default function App({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />
+}
+
+// 2. Tailwind Setup: styles/globals.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-white text-gray-900 dark:bg-zinc-900 dark:text-white;
+  font-family: 'Inter', sans-serif;
+}
+
+// 3. Basic Navbar: components/Navbar.tsx
+import Link from 'next/link'
+
+export default function Navbar() {
+  return (
+    <nav className="w-full py-4 px-6 flex justify-between items-center shadow-md bg-white dark:bg-zinc-800">
+      <Link href="/" className="text-2xl font-bold">Owltales4Art</Link>
+      <div className="space-x-4">
+        <Link href="/shop">Shop</Link>
+        <Link href="/upload">Upload</Link>
+        <Link href="/login">Login</Link>
+      </div>
+    </nav>
+  )
+}
+
+// 4. Home Page: pages/index.tsx
+import Navbar from '@/components/Navbar'
+
+export default function Home() {
+  return (
+    <div>
+      <Navbar />
+      <section className="py-16 px-6 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">Welcome to Owltales4Art</h1>
+        <p className="text-lg text-gray-600 dark:text-gray-300">
+          Discover, sell, and create amazing art and manga.
+        </p>
+      </section>
+    </div>
+  )
+}
+
+// 5. Shop Page: pages/shop.tsx
+import Navbar from '@/components/Navbar'
+
+export default function Shop() {
+  return (
+    <div>
+      <Navbar />
+      <div className="py-10 px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="rounded-xl shadow bg-white dark:bg-zinc-800 p-4">
+          <img src="/art1.jpg" alt="art" className="rounded" />
+          <h2 className="text-xl mt-2 font-semibold">Mystic Forest</h2>
+          <p className="text-sm text-gray-500">by Aurora</p>
+          <button className="mt-2 bg-indigo-600 text-white px-4 py-2 rounded-xl">Buy</button>
+        </div>
+        {/* Add more sample cards */}
+      </div>
+    </div>
+  )
+}

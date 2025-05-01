@@ -1,0 +1,50 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Continuous-time system example: y(t) = x(t) + 2
+def continuous_system(x_t):
+    return x_t + 2
+
+# Check time invariance for a shift of t0
+def verify_continuous_time_invariance(x_t, t_shift):
+    # Shifted input
+    x_shifted = np.roll(x_t, t_shift)  # Simulate time shift by rolling the array
+    
+    # Output of the system before and after the shift
+    y_original = continuous_system(x_t)
+    y_shifted = continuous_system(x_shifted)
+    
+    return y_original, y_shifted
+
+# Create a sample continuous-time signal (for simplicity, let's use a sine wave)
+t = np.linspace(0, 10, 1000)  # Time vector
+x_t = np.sin(t)  # Example input signal: sine wave
+
+# Verify time invariance for t_shift = 50
+t_shift = 50
+y_original, y_shifted = verify_continuous_time_invariance(x_t, t_shift)
+
+# Plotting the results
+plt.figure(figsize=(10, 6))
+plt.subplot(2, 1, 1)
+plt.plot(t, y_original, label='Original y(t)')
+plt.title('Original Output y(t) = x(t) + 2')
+plt.xlabel('t')
+plt.ylabel('y(t)')
+plt.legend()
+
+plt.subplot(2, 1, 2)
+plt.plot(t, y_shifted, label='Shifted y(t-t0)', color='r')
+plt.title(f'Shifted Output y(t-{t_shift}) = x(t-{t_shift}) + 2')
+plt.xlabel('t')
+plt.ylabel('y(t-t0)')
+plt.legend()
+
+plt.tight_layout()
+plt.show()
+
+# Check if the system is time-invariant
+if np.allclose(y_original[t_shift:], y_shifted[:-t_shift]):
+    print("The system is time-invariant.")
+else:
+    print("The system is not time-invariant.")
